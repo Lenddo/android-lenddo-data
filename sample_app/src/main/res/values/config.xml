@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="partner_script_id">SET_YOUR_PARTNER_SCRIPT_ID_HERE</string>
+    <string name="api_secret">SET_YOUR_API_SECRET_HERE</string>
+</resources>
