@@ -5,12 +5,12 @@ Lenddo Data SDK
 
 1.  [Introduction](#introduction)
 2.  [Prerequisites](#prerequisites)
-3.  [Data Collection Mechanism and Required Permissions](#datacollection)
-4.  [Data SDK Package](#package)
-5.  [Running the sample app](#sampleapp)
-6.  [Installation Instructions](#installation)
-    1.  [Initialize Data Collection](#initialize)
-    2.  [Starting Data Collection](#trigger)
+3.  [Data Collection Mechanism and Required Permissions](#data-collection-mechanism-and-required-permissions)
+4.  [Data SDK Package](#data-sdk-package)
+5.  [Running the sample app](#running-the-sample-app)
+6.  [Installation Instructions](#installation-instructions)
+    1.  [Initialize Data Collection](#initialize-data-collection)
+    2.  [Starting Data Collection](#starting-data-collection)
 
 ## Introduction
 
