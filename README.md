@@ -78,7 +78,7 @@ The data SDK package contains the following:
 
 ## Running the sample app
 
-A sample app is provided with the SDK package for you to test the Data SDK. If you want to proceed immediately to integrating it with your own app, proceed to the section [Installation Instructions](#installation).
+A sample app is provided with the SDK package for you to test the Data SDK. If you want to proceed immediately to integrating it with your own app, proceed to the section [Installation Instructions](#installation-instructions).
 
 1.  Extract the LenddoData SDK package that was provided to you.
 2.  Using Android Studio open the main folder of the extracted package, the main folder should have the following directories and files included: ![](http://www.lenddocdn.com/images/sdk-package.png)
