@@ -24,9 +24,12 @@ Make sure you have the latest version of Android Studio properly setup and insta
 Before incorporating the Data SDK into your app, you should be provided with the following information:
 
 *   Partner Script ID
-*   Social Service API Key
+*   Lenddo Score Service API Secret
 
-Please ask for the information above from your Lenddo representative. There may be also other partner specific values that you are required to set.
+Please ask for the information above from your Lenddo representative. If you have a dashboard account, these values
+can also be found there.
+
+There may be also other partner specific values that you are required to set.
 
 ## Data Collection Mechanism and Required Permissions
 
