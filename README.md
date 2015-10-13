@@ -11,6 +11,7 @@ Lenddo Data SDK
 6.  [Installation Instructions](#installation-instructions)
     1.  [Initialize Data Collection](#initialize-data-collection)
     2.  [Starting Data Collection](#starting-data-collection)
+    3.  [Passing the Application ID](#passing-the-application-id)
 
 ## Introduction
 
