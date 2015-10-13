@@ -78,7 +78,7 @@ The data SDK package contains the following:
 
 *   The LenddoData library that you will use to integrate into you own app
 *   A sample app for reference on how to integrate
-*   A copy of the Data SDK documentation - LenddoDataSDK2.0.pdf
+*   A copy of the Data SDK documentation - README.md
 
 ## Running the sample app
 
