@@ -97,7 +97,7 @@ A sample app is provided with the SDK package for you to test the Data SDK. If y
         Replace SET_YOUR_PARTNER_SCRIPT_ID_HERE and SET_YOUR_API_SECRET_HERE with the credentials provided to you.
 
     2.  Configure optional settings - Go to the file sample_app/src/main/java/lenddo/com/lenddoconnect/App.java on the onCreate method
-        
+
         ```
         ClientOptions clientOptions = new ClientOptions();
 
@@ -221,3 +221,12 @@ To enhance the amount of data collected, the Facebook access token can be passed
 ```
 AndroidData.setFacebookToken(context, AccessToken.getCurrentAccessToken().toString(),AccessToken.getCurrentAccessToken().getExpires().getTime());
 ```
+
+### Passing the Application ID
+
+Depending on your requirements, you may need to pass an "application ID" which is required when your app or service processes application forms.
+
+To do this you can use AndroidData.startAndroidDataWithApplicationId() instead of AndroidData.startAndroidData() which takes an "application ID" value that you can pass along.
+
+If the application ID is not yet available at the time you want to start android data collection, you may instead
+use AndroidData.setApplicationId() which you can call at a later point in time.
