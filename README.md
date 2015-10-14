@@ -47,7 +47,7 @@ The LenddoDataSDK captures the following data stored on the phone consistent wit
 LenddoDataSDK will use information stored on the users' phone. It is advisable for all permissions to be added to your app to enable LenddoData to extract the necessary information for verification and scoring. The optimal permissions are already defined for you in the Libraries’ AndroidManifest.xml and are automatically added to your app using gradle when you rebuild the app after adding our SDK.
 
 Below is the list of required permissions.
-```
+```java
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -63,7 +63,7 @@ Below is the list of required permissions.
 
 If you do not want the all default permissions added, you manually have to remove permissions by editing the **LenddoData/AndroidManifest.xml** and comment out permissions you do not wish to grant, however please note that the following permissions at the minimum are required for the operation of the SDK and should NOT be removed:
 
-```
+```java
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -90,7 +90,7 @@ A sample app is provided with the SDK package for you to test the Data SDK. If y
 4.  You must now edit various files based on the details provided by your Lenddo Contact:
     1.  Enter the partner credentials - Go to the file sample_app/src/main/res/values/config.xml
 
-        ```
+        ```xml
         <?xml version="1.0" encoding="utf-8"?>
         <resources>
            <string name="partner_script_id">SET_YOUR_PARTNER_SCRIPT_ID_HERE</string>
@@ -102,7 +102,7 @@ A sample app is provided with the SDK package for you to test the Data SDK. If y
 
     2.  Configure optional settings - Go to the file sample_app/src/main/java/lenddo/com/lenddoconnect/App.java on the onCreate method
 
-        ```
+        ```java
         ClientOptions clientOptions = new ClientOptions();
 
         //Uncomment the next line when you want data to be uploaded only when wifi is available
@@ -126,13 +126,13 @@ Extract the LenddoData SDK package that was provided if you have not done so alr
 
 In the **settings.gradle** of your project
 
-```
+```java
 include ':LenddoData'
 ```
 
 Then add LenddoData as a dependency in your main apps, build.gradle, as below:
 
-```
+```java
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
@@ -146,7 +146,7 @@ dependencies {
 
 You need to add an Application class to your app (If it does not already have one). See below for an example:
 
-```
+```java
 package com.sample.app;
 
 import android.app.Application;
@@ -175,7 +175,7 @@ If you already have an Application class, then simply add the AndroidData.setup(
 
 Note that you need to set the secret key and api key provided to you by Lenddo here:
 
-```
+```java
 PARTNER_SCRIPT_ID
 API_SECRET
 ```
@@ -184,7 +184,7 @@ Your Lenddo contact will inform you if this is something you need to change.
 
 If you did not have an application class before, you need to add a android:name attribute to the application tag in to your main application’s AndroidManifest.xml (below is an example):
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
     <manifest xmlns:android="http://schemas.android.com/apk/res/android"
         package="lenddo.com.lenddoconnect">
@@ -202,7 +202,7 @@ If you did not have an application class before, you need to add a android:name 
 
 You may start data collection at any time, though ideally it is done after a user has successfully logged in to your app. You are required to pass a string that identifies the user (e.g. user id) as the second parameter. This allows you and our data science team to associate acquired data with the specific user at a later point in time. Below is the sample code to trigger data collection:
 
-```
+```java
 AndroidData.startAndroidData(this, “USER_ID_OR_CLIENT_ID”);
 ```
 
@@ -214,7 +214,7 @@ Once integration has been completed and you have started Data Collection during 
 
 There are instances when you want to stop data collection, like when a user logs out of your app. To do so:
 
-```
+```java
 AndroidData.clear(context);
 ```
 
@@ -222,7 +222,7 @@ AndroidData.clear(context);
 
 To enhance the amount of data collected, the Facebook access token can be passed to the Data SDK, below is an example on how it is done:
 
-```
+```java
 AndroidData.setFacebookToken(context, AccessToken.getCurrentAccessToken().toString(),AccessToken.getCurrentAccessToken().getExpires().getTime());
 ```
 
