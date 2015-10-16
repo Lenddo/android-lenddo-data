@@ -13,11 +13,11 @@ Lenddo Data SDK
     2.  [Starting Data Collection](#starting-data-collection)
     3.  [Passing the Application ID](#passing-the-application-id)
 
-## Introduction
+## Introduction <a id="introduction"></a>
 
 The Lenddo Data SDK (LenddoDataSDK) allows you to collect information in order for Lenddo to verify the user's information and enhance its scoring capabilities. The LenddoDataSDK collects information in the background and can be activated as soon as the user has downloaded the app, given permissions and logged into the app.
 
-## Prerequisites
+## Prerequisites <a id="prerequisites"></a>
 
 Make sure you have the latest version of Android Studio properly setup and installed, please refer to the Google Developer site for the instructions [Android Studio Download and Installation Instructions.](https://developer.android.com/sdk/index.html)
 
@@ -31,7 +31,7 @@ can also be found there.
 
 There may be also other partner specific values that you are required to set.
 
-## Data Collection Mechanism and Required Permissions
+## Data Collection Mechanism and Required Permissions <a id="data-collection-mechanism-and-required-permissions"></a>
 
 The LenddoDataSDK captures the following data stored on the phone consistent with the permissions defined (see section on adding permissions):
 
@@ -72,7 +72,7 @@ If you do not want the all default permissions added, you manually have to remov
 
 It is also important that these permissions are consistent with the privacy policy of your app.
 
-## Data SDK Package
+## Data SDK Package <a id="data-sdk-package"></a>
 
 The data SDK package contains the following:
 
@@ -80,7 +80,7 @@ The data SDK package contains the following:
 *   A sample app for reference on how to integrate
 *   A copy of the Data SDK documentation - README.md
 
-## Running the sample app
+## Running the sample app <a id="running-the-sample-app"></a>
 
 A sample app is provided with the SDK package for you to test the Data SDK. If you want to proceed immediately to integrating it with your own app, proceed to the section [Installation Instructions](#installation-instructions).
 
@@ -120,7 +120,7 @@ A sample app is provided with the SDK package for you to test the Data SDK. If y
 5.  Run the app. You will be presented with a sample form that allows you to start data collection as well as see various status messages. Enter a unique value for the client ID and click on send to start the data collection process. Note that the client ID would correspond to the user id in or application id in your own application.
 6.  Notify your Lenddo representative to check on the data that have been collected and if changes are necessary.
 
-## Installation Instructions
+## Installation Instructions <a id="installation-instructions"></a>
 
 Extract the LenddoData SDK package that was provided if you have not done so already, it should contain the LenddoData folder. Copy that folder to your project.
 
@@ -142,7 +142,7 @@ dependencies {
 }
 ```
 
-### Initialize Data Collection
+### Initialize Data Collection <a id="initialize-data-collection"></a>
 
 You need to add an Application class to your app (If it does not already have one). See below for an example:
 
@@ -198,7 +198,7 @@ If you did not have an application class before, you need to add a android:name 
         ......
 ```
 
-### Starting Data Collection
+### Starting Data Collection <a id="starting-data-collection"></a>
 
 You may start data collection at any time, though ideally it is done after a user has successfully logged in to your app. You are required to pass a string that identifies the user (e.g. user id) as the second parameter. This allows you and our data science team to associate acquired data with the specific user at a later point in time. Below is the sample code to trigger data collection:
 
@@ -226,7 +226,7 @@ To enhance the amount of data collected, the Facebook access token can be passed
 AndroidData.setFacebookToken(context, AccessToken.getCurrentAccessToken().toString(),AccessToken.getCurrentAccessToken().getExpires().getTime());
 ```
 
-### Passing the Application ID
+### Passing the Application ID <a id="passing-the-application-id"></a>
 
 Depending on your requirements, you may need to pass an "application ID" which is required when your app or service processes application forms.
 
