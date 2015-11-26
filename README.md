@@ -11,7 +11,9 @@ Lenddo Data SDK ver 2.4
 6.  [Installation Instructions](#installation-instructions)
     1.  [Initialize Data Collection](#initialize-data-collection)
     2.  [Starting Data Collection](#starting-data-collection)
-    3.  [Passing the Application ID](#passing-the-application-id)
+    3.  [Stopping Data Collection](#stopping-data-collection)
+    4.  [Passing the Facebook Token](#passing-the-facebook-token)
+    5.  [Passing the Application ID](#passing-the-application-id)
 
 ##<a name="introduction"></a> Introduction 
 
@@ -210,7 +212,7 @@ Please note that you only need to do this once for the current user. Data collec
 
 Once integration has been completed and you have started Data Collection during testing, notify your Lenddo representative to check on the data that have been collected and if changes are necessary.
 
-### Stopping Data Collection
+### <a name="stopping-data-collection"></a> Stopping Data Collection
 
 There are instances when you want to stop data collection, like when a user logs out of your app. To do so:
 
@@ -218,12 +220,13 @@ There are instances when you want to stop data collection, like when a user logs
 AndroidData.clear(context);
 ```
 
-### Passing the Facebook Token
+### <a name="passing-the-facebook-token"></a> Passing the Facebook Token
 
 To enhance the amount of data collected, the Facebook access token can be passed to the Data SDK, below is an example on how it is done:
 
 ```java
-AndroidData.setFacebookToken(context, AccessToken.getCurrentAccessToken().toString(),AccessToken.getCurrentAccessToken().getExpires().getTime());
+AndroidData.setFacebookToken(context, AccessToken.getCurrentAccessToken().toString(),
+                      AccessToken.getCurrentAccessToken().getExpires().getTime());
 ```
 
 ### <a name="passing-the-application-id"></a> Passing the Application ID
