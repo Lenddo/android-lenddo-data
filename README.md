@@ -1,5 +1,5 @@
-Lenddo Data SDK ver 2.4
-===============
+Lenddo Data SDK ver 2.5
+=======================
 
 ## Table of Contents
 

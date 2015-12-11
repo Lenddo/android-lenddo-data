@@ -66,7 +66,7 @@ public class SampleActivity extends Activity implements View.OnClickListener {
 
             clientIdText.setText(AndroidDataUtils.getUserId(this));
             deviceIdText.setText(AndroidDataUtils.getDeviceUID(this));
-            profieTypeText.setText(AndroidData.getProfileType());
+            profieTypeText.setText(AndroidData.getProfileType(getApplicationContext()));
             DataManager dataManager = DataManager.getInstance(this);
             if (dataManager.isWifiOnly()) {
                 wifiOnlyText.setText("WIFI Only");
