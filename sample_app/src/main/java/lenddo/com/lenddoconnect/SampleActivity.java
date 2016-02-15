@@ -1,7 +1,10 @@
 package lenddo.com.lenddoconnect;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -66,7 +69,7 @@ public class SampleActivity extends Activity implements View.OnClickListener {
 
             clientIdText.setText(AndroidDataUtils.getUserId(this));
             deviceIdText.setText(AndroidDataUtils.getDeviceUID(this));
-            profieTypeText.setText(AndroidData.getProfileType(getApplicationContext()));
+            profieTypeText.setText(AndroidData.getProfileType(this.getApplicationContext()));
             DataManager dataManager = DataManager.getInstance(this);
             if (dataManager.isWifiOnly()) {
                 wifiOnlyText.setText("WIFI Only");
@@ -102,6 +105,11 @@ public class SampleActivity extends Activity implements View.OnClickListener {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_settings) {
+            Intent intent = new Intent();
+            intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+            Uri uri = Uri.fromParts("package", getPackageName(), null);
+            intent.setData(uri);
+            startActivity(intent);
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -127,11 +135,9 @@ public class SampleActivity extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         if (v == startButton) {
             String clientId = clientIdEdt.getText().toString();
-            //Set client ID and start collection
-
+            Log.d("SampleActivity","Data collection started!");
+            Toast.makeText(this, "Data collection initiated!", Toast.LENGTH_LONG).show();
             AndroidData.startAndroidData(this, clientId);
-
-            Toast.makeText(this, "Data collection started!", Toast.LENGTH_LONG).show();
             checkSessionState();
         } else if (v == logoutButton) {
             AndroidData.clear(this);
@@ -140,6 +146,5 @@ public class SampleActivity extends Activity implements View.OnClickListener {
             checkSessionState();
         }
     }
-
 
 }

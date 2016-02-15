@@ -22,7 +22,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="1234567890" />
-
         <Button
             android:id="@+id/start_button"
             android:layout_width="match_parent"
@@ -33,7 +32,7 @@
     <LinearLayout
         android:id="@+id/session_active_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <TextView
@@ -77,14 +76,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <Button
-            android:id="@+id/refresh_button"
-            android:text="@string/refresh"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <Button
             android:id="@+id/logout_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/stop" />
     </LinearLayout>
+    <Button
+        android:id="@+id/refresh_button"
+        android:text="@string/refresh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>

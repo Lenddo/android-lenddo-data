@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="25dp"
+    android:paddingRight="25dp"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/tv_permission_rationale_maintext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="5dp"
+        android:textColor="#FFFFFF"
+        android:text="@string/permission_rationale_complete"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- Phone -->
+            <LinearLayout
+                android:id="@+id/grp_permission_phone"
+                android:orientation="horizontal" android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/icon_phone"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="#FFFFFF"
+                        android:text="@string/permission_title_phone"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:textColor="#FFFFFF"
+                        android:text="@string/permission_detail_phone"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- SMS -->
+            <LinearLayout
+                android:id="@+id/grp_permission_sms"
+                android:orientation="horizontal" android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/icon_sms"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="#FFFFFF"
+                        android:text="@string/permission_title_sms"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:textColor="#FFFFFF"
+                        android:text="@string/permission_detail_sms"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Contacts -->
+            <LinearLayout
+                android:id="@+id/grp_permission_contacts"
+                android:orientation="horizontal" android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/icon_contacts"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="#FFFFFF"
+                        android:text="@string/permission_title_contacts"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:textColor="#FFFFFF"
+                        android:text="@string/permission_detail_contacts"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Location -->
+            <LinearLayout
+                android:id="@+id/grp_permission_location"
+                android:orientation="horizontal" android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/icon_location"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="#FFFFFF"
+                        android:text="@string/permission_title_location"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:textColor="#FFFFFF"
+                        android:text="@string/permission_detail_location"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Calendar -->
+            <LinearLayout
+                android:id="@+id/grp_permission_calendar"
+                android:orientation="horizontal" android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/icon_calendar"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="#FFFFFF"
+                        android:text="@string/permission_title_calendar"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:textColor="#FFFFFF"
+                        android:text="@string/permission_detail_calendar"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
