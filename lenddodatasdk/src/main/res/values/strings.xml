@@ -4,6 +4,8 @@
     <string name="permission_intro">Please give us access to Phone, SMS, Contacts, Location, and Calendar in order to generate your credit score. Rest assured, your data is safe as we use industry standard for encrypting private data over the internet.\n</string>
     <string name="learnmore_allcaps">LEARN MORE</string>
     <string name="cancel_allcaps">CANCEL</string>
+    <string name="done_allcaps">DONE</string>
+    <string name="submit_allcaps">SUBMIT</string>
     <string name="continue_to_permissions_allcaps">CONTINUE TO PERMISSIONS</string>
 
     <string name="permission_rationale_partial">To continue using the app, you must have the following permissions:</string>
@@ -21,4 +23,14 @@
     <string name="permission_detail_location">We study periodic locational activity. This helps us estimate with a fair level of accuracy on your most visited locations. We use this as a signal for building your credit score.</string>
     <string name="permission_detail_contacts">We use read access to contacts to determine a list of people in your contact list. This helps us build a social graph by making use of the data you provided us. We will not use this information to contact your friends.</string>
     <string name="permission_detail_calendar">Having access to calendar events helps us determine the time of the day you are most busy. People who are busy during the day have different credit behaviour than people who are busy during the night. We use this as a signal for building your credit score.</string>
+
+    <string name="feedback_title">Help Us Improve</string>
+    <string name="feedback_inquiry">What is your primary reason for not sharing data?</string>
+    <string name="feedback1">I am worried about my data privacy.</string>
+    <string name="feedback2">I am unclear on how sharing these permissions will help me.</string>
+    <string name="feedback3">I am unclear on how my data would be used.</string>
+    <string name="feedback4">Others</string>
+    <string name="thank_you_title">Thank you</string>
+    <string name="thank_you_detail">Your feedback means a great deal and will help us improve the product experience.</string>
+
 </resources>
