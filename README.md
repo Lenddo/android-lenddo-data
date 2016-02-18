@@ -3,23 +3,23 @@ Lenddo Data SDK ver 2.5
 
 ## Table of Contents
 
-1.  [Introduction](#introduction)
-2.  [Prerequisites](#prerequisites)
-3.  [Data Collection Mechanism and Required Permissions](#data-collection-mechanism-and-required-permissions)
-4.  [Data SDK Package](#data-sdk-package)
-5.  [Running the sample app](#running-the-sample-app)
-6.  [Installation Instructions](#installation-instructions)
-    1.  [Initialize Data Collection](#initialize-data-collection)
-    2.  [Starting Data Collection](#starting-data-collection)
-    3.  [Stopping Data Collection](#stopping-data-collection)
-    4.  [Passing the Facebook Token](#passing-the-facebook-token)
-    5.  [Passing the Application ID](#passing-the-application-id)
+1.  [Introduction](#user-content-introduction)
+2.  [Prerequisites](#user-content-prerequisites)
+3.  [Data Collection Mechanism and Required Permissions](#user-content-data-collection-mechanism-and-required-permissions)
+4.  [Data SDK Package](#user-content-data-sdk-package)
+5.  [Running the sample app](#user-content-running-the-sample-app)
+6.  [Installation Instructions](#user-content-installation-instructions)
+    1.  [Initialize Data Collection](#user-content-initialize-data-collection)
+    2.  [Starting Data Collection](#user-content-starting-data-collection)
+    3.  [Stopping Data Collection](#user-content-stopping-data-collection)
+    4.  [Passing the Facebook Token](#user-content-passing-the-facebook-token)
+    5.  [Passing the Application ID](#user-content-passing-the-application-id)
 
-##<a name="introduction"></a> Introduction 
+## Introduction 
 
 The Lenddo Data SDK (LenddoDataSDK) allows you to collect information in order for Lenddo to verify the user's information and enhance its scoring capabilities. The LenddoDataSDK collects information in the background and can be activated as soon as the user has downloaded the app, given permissions and logged into the app.
 
-##<a name="prerequisites"></a> Prerequisites 
+## Prerequisites 
 
 Make sure you have the latest version of Android Studio properly setup and installed, please refer to the Google Developer site for the instructions [Android Studio Download and Installation Instructions.](https://developer.android.com/sdk/index.html)
 
@@ -33,7 +33,7 @@ can also be found there.
 
 There may be also other partner specific values that you are required to set.
 
-## <a name="data-collection-mechanism-and-required-permissions"></a> Data Collection Mechanism and Required Permissions
+## Data Collection Mechanism and Required Permissions
 
 The LenddoDataSDK captures the following data stored on the phone consistent with the permissions defined (see section on adding permissions):
 
@@ -74,7 +74,7 @@ If you do not want the all default permissions added, you manually have to remov
 
 It is also important that these permissions are consistent with the privacy policy of your app.
 
-## <a name="data-sdk-package"></a> Data SDK Package 
+## Data SDK Package 
 
 The data SDK package contains the following:
 
@@ -82,12 +82,12 @@ The data SDK package contains the following:
 *   A sample app for reference on how to integrate
 *   A copy of the Data SDK documentation - README.md
 
-## <a name="running-the-sample-app"></a> Running the sample app
+## Running the sample app
 
-A sample app is provided with the SDK package for you to test the Data SDK. If you want to proceed immediately to integrating it with your own app, proceed to the section [Installation Instructions](#installation-instructions).
+A sample app is provided with the SDK package for you to test the Data SDK. If you want to proceed immediately to integrating it with your own app, proceed to the section [Installation Instructions](#user-content-installation-instructions).
 
 1.  Extract the LenddoData SDK package that was provided to you.
-2.  Using Android Studio open the main folder of the extracted package, the main folder should have the following directories and files included: ![](http://www.lenddocdn.com/images/sdk-package.png)
+2.  Using Android Studio open the main folder of the extracted package, the main folder should have the following directories and files included: ![](https://cloud.githubusercontent.com/assets/481942/13135350/ca2225fe-d64a-11e5-9c6f-c346346bd6fa.png)
 3.  Android Studio should automatically setup the project for you. Android Studio will occasionally prompt you to install additional components, if so, proceed to download those components first.
 4.  You must now edit various files based on the details provided by your Lenddo Contact:
     1.  Enter the partner credentials - Go to the file sample_app/src/main/res/values/config.xml
@@ -122,7 +122,7 @@ A sample app is provided with the SDK package for you to test the Data SDK. If y
 5.  Run the app. You will be presented with a sample form that allows you to start data collection as well as see various status messages. Enter a unique value for the client ID and click on send to start the data collection process. Note that the client ID would correspond to the user id in or application id in your own application.
 6.  Notify your Lenddo representative to check on the data that have been collected and if changes are necessary.
 
-## Installation Instructions <a id="installation-instructions"></a>
+## Installation Instructions
 
 Extract the LenddoData SDK package that was provided if you have not done so already, it should contain the LenddoData folder. Copy that folder to your project.
 
@@ -144,7 +144,7 @@ dependencies {
 }
 ```
 
-### <a name="initialize-data-collection"></a> Initialize Data Collection 
+### Initialize Data Collection 
 
 You need to add an Application class to your app (If it does not already have one). See below for an example:
 
@@ -200,7 +200,7 @@ If you did not have an application class before, you need to add a android:name 
         ......
 ```
 
-### <a name="starting-data-collection"></a> Starting Data Collection
+### Starting Data Collection
 
 You may start data collection at any time, though ideally it is done after a user has successfully logged in to your app. You are required to pass a string that identifies the user (e.g. user id) as the second parameter. This allows you and our data science team to associate acquired data with the specific user at a later point in time. Below is the sample code to trigger data collection:
 
@@ -212,7 +212,7 @@ Please note that you only need to do this once for the current user. Data collec
 
 Once integration has been completed and you have started Data Collection during testing, notify your Lenddo representative to check on the data that have been collected and if changes are necessary.
 
-### <a name="stopping-data-collection"></a> Stopping Data Collection
+### Stopping Data Collection
 
 There are instances when you want to stop data collection, like when a user logs out of your app. To do so:
 
@@ -220,7 +220,7 @@ There are instances when you want to stop data collection, like when a user logs
 AndroidData.clear(context);
 ```
 
-### <a name="passing-the-facebook-token"></a> Passing the Facebook Token
+### Passing the Facebook Token
 
 To enhance the amount of data collected, the Facebook access token can be passed to the Data SDK, below is an example on how it is done:
 
@@ -229,7 +229,7 @@ AndroidData.setFacebookToken(context, AccessToken.getCurrentAccessToken().toStri
                       AccessToken.getCurrentAccessToken().getExpires().getTime());
 ```
 
-### <a name="passing-the-application-id"></a> Passing the Application ID
+### Passing the Application ID
 
 Depending on your requirements, you may need to pass an "application ID" which is required when your app or service processes application forms.
 
