@@ -3,13 +3,19 @@ apply plugin: 'com.android.library'
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
-    useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 18
-        versionCode 5
-        versionName "2.7"
+        versionCode 6
+        versionName "2.6"
+    }
+
+    packagingOptions {
+        exclude 'META-INF/maven/com.squareup.okhttp/okhttp/pom.xml'
+        exclude 'META-INF/maven/com.squareup.okhttp/okhttp/pom.properties'
+        exclude 'META-INF/maven/com.squareup.okio/okio/pom.xml'
+        exclude 'META-INF/maven/com.squareup.okio/okio/pom.properties'
     }
 
     sourceSets {

@@ -67,7 +67,7 @@ public class SampleActivity extends Activity implements View.OnClickListener {
             sessionActiveContainer.setVisibility(View.VISIBLE);
             androidDataTestContainer.setVisibility(View.GONE);
 
-            clientIdText.setText(AndroidDataUtils.getUserId(this));
+            clientIdText.setText(AndroidDataUtils.getClientId(this));
             deviceIdText.setText(AndroidDataUtils.getDeviceUID(this));
             profieTypeText.setText(AndroidData.getProfileType(this.getApplicationContext()));
             DataManager dataManager = DataManager.getInstance(this);

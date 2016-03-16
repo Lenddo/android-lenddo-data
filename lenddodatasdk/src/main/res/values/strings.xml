@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">LenddoData</string>
     <string name="grant_access">Grant Access</string>
-    <string name="permission_intro">Please give us access to Phone, SMS, Contacts, Location, and Calendar in order to generate your credit score. Rest assured, your data is safe as we use industry standard for encrypting private data over the internet.\n</string>
+    <string name="permission_intro">Please give us access permission to Phone, SMS, Contacts, Location, and Calendar in order to generate your credit score. Rest assured, your data is safe as we use industry standard for encrypting private data over the internet.\n</string>
     <string name="learnmore_allcaps">LEARN MORE</string>
     <string name="cancel_allcaps">CANCEL</string>
     <string name="done_allcaps">DONE</string>
@@ -10,7 +10,6 @@
 
     <string name="permission_rationale_partial">To continue using the app, you must have the following permissions:</string>
     <string name="permission_rationale_complete">To make sure you understand what we actually collect, we\'ve provided a detailed breakdown of the permissions below:</string>
-
 
     <string name="permission_title_sms">SMS</string>
     <string name="permission_title_phone">Phone</string>
