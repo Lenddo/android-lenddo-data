@@ -1,4 +1,4 @@
-Lenddo Data SDK ver 2.5
+Lenddo Data SDK ver 2.6
 =======================
 
 ## Table of Contents
@@ -19,7 +19,7 @@ Lenddo Data SDK ver 2.5
 
 The Lenddo Data SDK (LenddoDataSDK) allows you to collect information in order for Lenddo to verify the user's information and enhance its scoring capabilities. The LenddoDataSDK collects information in the background and can be activated as soon as the user has downloaded the app, given permissions and logged into the app.
 
-## Prerequisites 
+## Pre-requisites 
 
 Make sure you have the latest version of Android Studio properly setup and installed, please refer to the Google Developer site for the instructions [Android Studio Download and Installation Instructions.](https://developer.android.com/sdk/index.html)
 
@@ -49,6 +49,7 @@ The LenddoDataSDK captures the following data stored on the phone consistent wit
 LenddoDataSDK will use information stored on the users' phone. It is advisable for all permissions to be added to your app to enable LenddoData to extract the necessary information for verification and scoring. The optimal permissions are already defined for you in the Libraries’ AndroidManifest.xml and are automatically added to your app using gradle when you rebuild the app after adding our SDK.
 
 Below is the list of required permissions.
+
 ```java
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -63,12 +64,13 @@ Below is the list of required permissions.
 <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 ```
 
-If you do not want the all default permissions added, you manually have to remove permissions by editing the **LenddoData/AndroidManifest.xml** and comment out permissions you do not wish to grant, however please note that the following permissions at the minimum are required for the operation of the SDK and should NOT be removed:
+If you do not want the all default permissions added, you manually have to remove permissions by editing the **lenddodatasdk/src/main/AndroidManifest.xml** and comment out permissions you do not wish to grant, however please note that the following permissions at the minimum are required for the operation of the SDK and should NOT be removed:
 
 ```java
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+<uses-permission android:name="android.permission.READ_SMS" />
 <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 ```
 
@@ -87,7 +89,7 @@ The data SDK package contains the following:
 A sample app is provided with the SDK package for you to test the Data SDK. If you want to proceed immediately to integrating it with your own app, proceed to the section [Installation Instructions](#user-content-installation-instructions).
 
 1.  Extract the LenddoData SDK package that was provided to you.
-2.  Using Android Studio open the main folder of the extracted package, the main folder should have the following directories and files included: ![](https://cloud.githubusercontent.com/assets/481942/13135350/ca2225fe-d64a-11e5-9c6f-c346346bd6fa.png)
+2.  Using Android Studio open the main folder of the extracted package, the main folder should have the following directories and files included: ![](https://cloud.githubusercontent.com/assets/950812/13836866/b855d90e-ec40-11e5-9d98-181971eb3616.png)
 3.  Android Studio should automatically setup the project for you. Android Studio will occasionally prompt you to install additional components, if so, proceed to download those components first.
 4.  You must now edit various files based on the details provided by your Lenddo Contact:
     1.  Enter the partner credentials - Go to the file sample_app/src/main/res/values/config.xml
@@ -100,7 +102,7 @@ A sample app is provided with the SDK package for you to test the Data SDK. If y
         </resources>
         ```
 
-        Replace SET_YOUR_PARTNER_SCRIPT_ID_HERE and SET_YOUR_API_SECRET_HERE with the credentials provided to you.
+        Replace SET\_YOUR\_PARTNER\_SCRIPT\_ID\_HERE and SET\_YOUR\_API\_SECRET\_HERE with the credentials provided to you.
 
     2.  Configure optional settings - Go to the file sample_app/src/main/java/lenddo/com/lenddoconnect/App.java on the onCreate method
 
@@ -124,15 +126,15 @@ A sample app is provided with the SDK package for you to test the Data SDK. If y
 
 ## Installation Instructions
 
-Extract the LenddoData SDK package that was provided if you have not done so already, it should contain the LenddoData folder. Copy that folder to your project.
+Extract the LenddoData SDK package that was provided if you have not done so already, it should contain the _lenddodatasdk_ folder. Copy that folder to your project.
 
 In the **settings.gradle** of your project
 
 ```java
-include ':LenddoData'
+include ':lenddodatasdk'
 ```
 
-Then add LenddoData as a dependency in your main apps, build.gradle, as below:
+Then add _lenddodatasdk_ as a dependency in your main apps, build.gradle, as below:
 
 ```java
 dependencies {
@@ -140,9 +142,19 @@ dependencies {
 
     ....
 
-    compile project(':LenddoData')
+    compile project(':lenddodatasdk')
 }
 ```
+
+In the **build.gradle** of your app, set the targetSdkVersion to at most 22 only.
+
+```java
+defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 22
+    }
+```
+
 
 ### Initialize Data Collection 
 
@@ -225,6 +237,7 @@ AndroidData.clear(context);
 To enhance the amount of data collected, the Facebook access token can be passed to the Data SDK, below is an example on how it is done:
 
 ```java
+// AndroidData.setFacebookToken(Context context, String token, long expiration); 
 AndroidData.setFacebookToken(context, AccessToken.getCurrentAccessToken().toString(),
                       AccessToken.getCurrentAccessToken().getExpires().getTime());
 ```
