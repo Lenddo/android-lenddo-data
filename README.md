@@ -238,7 +238,7 @@ To enhance the amount of data collected, the Facebook access token can be passed
 
 ```java
 // AndroidData.setFacebookToken(Context context, String token, long expiration); 
-AndroidData.setFacebookToken(context, AccessToken.getCurrentAccessToken().toString(),
+AndroidData.setFacebookToken(context, AccessToken.getCurrentAccessToken().getToken(),
                       AccessToken.getCurrentAccessToken().getExpires().getTime());
 ```
 
