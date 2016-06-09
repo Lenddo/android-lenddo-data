@@ -157,7 +157,7 @@ See the LenddoSDK for details)
         AuthorizationStatus status = collector.getAuthorizationStatus();
         finishIntent.putExtra("verification", status.getVerification());
         finishIntent.putExtra("status", status.getStatus());
-        finishIntent.putExtra("userId", status.getUserId());
+        finishIntent.putExtra("partnerScriptId", status.getUserId());
         finishIntent.putExtra("transId", status.getTransId());
 
         ......
@@ -181,7 +181,7 @@ This will look something like:
         AuthorizationStatus status = collector.getAuthorizationStatus();
         finishIntent.putExtra("verification", status.getVerification());
         finishIntent.putExtra("status", status.getStatus());
-        finishIntent.putExtra("userId", status.getUserId());
+        finishIntent.putExtra("partnerScriptId", status.getUserId());
         finishIntent.putExtra("transId", status.getTransId());
 
         Utils.setUserId(this, status.getUserId());

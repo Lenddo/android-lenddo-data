@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:lenddo="http://schemas.android.com/apk/res-auto"
     android:layout_marginLeft="@dimen/activity_horizontal_margin"
     android:layout_marginRight="@dimen/activity_horizontal_margin"
     android:layout_width="match_parent"
@@ -81,9 +82,45 @@
             android:layout_height="wrap_content"
             android:text="@string/stop" />
     </LinearLayout>
+
     <Button
         android:id="@+id/refresh_button"
         android:text="@string/refresh"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="test Form Filling Analytics"
+        android:id="@+id/btn_sample"/>
+
+    <com.lenddo.core.uiwidgets.TimedEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tedt_firstname"
+        android:text=""
+        lenddo:enableFormFillingAnalytics="true"
+        lenddo:analyticsKeyTitle="firstname" />
+
+    <com.lenddo.core.uiwidgets.TimedEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tedt_lastname"
+        android:text=""
+        lenddo:enableFormFillingAnalytics="true"
+        lenddo:analyticsKeyTitle="lastname" />
+
+    <com.lenddo.core.uiwidgets.TimedSeekbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tsbr_loanamount"
+        android:text="Loan Amount"
+        android:max="10"
+        android:progress="0"
+        lenddo:enableFormFillingAnalytics="true"
+        lenddo:analyticsKeyTitle="loanamount" />
+
+
 </LinearLayout>

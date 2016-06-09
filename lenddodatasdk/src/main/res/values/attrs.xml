@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TimedWidgets">
+        <attr name="enableFormFillingAnalytics" format="boolean"/>
+        <attr name="enableValidation" format="boolean"/>
+        <attr name="isMandatory" format="boolean"/>
+        <attr name="analyticsKeyTitle" format="string"/>
+    </declare-styleable>
+</resources>

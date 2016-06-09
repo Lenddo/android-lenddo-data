@@ -32,4 +32,12 @@
     <string name="thank_you_title">Gracias</string>
     <string name="thank_you_detail">Tu feedback nos ayuda a mejorar nuestra experiencia de producto.</string>
 
+    // Validation Message
+    <string name="validation_msg_unsupported_exception">Validation is disabled.</string>
+    <string name="validation_msg_mandatory_field">This field is required.</string>
+    <string name="validation_msg_validation_disabled">Validation is disabled.</string>
+    <string name="validation_msg_invalid_date">Invalid date.</string>
+    <string name="validation_msg_invalid_date_format">Invalid date format.</string>
+    <string name="validation_msg_invalid_email_format">Invalid email format.</string>
+    
 </resources>

@@ -14,6 +14,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.lenddo.core.analytics.FormFillingAnalytics;
+import com.lenddo.core.uiwidgets.TimedEditText;
+import com.lenddo.core.uiwidgets.TimedSeekbar;
 import com.lenddo.data.AndroidData;
 import com.lenddo.data.DataManager;
 import com.lenddo.data.utils.AndroidDataUtils;
@@ -60,6 +63,24 @@ public class SampleActivity extends Activity implements View.OnClickListener {
         logoutButton.setOnClickListener(this);
 
         checkSessionState();
+
+
+        final TimedEditText tedt_firstname = (TimedEditText) findViewById(R.id.tedt_firstname);
+        final TimedEditText tedt_lastname = (TimedEditText) findViewById(R.id.tedt_lastname);
+        final TimedSeekbar fsbr_loanamount = (TimedSeekbar) findViewById(R.id.tsbr_loanamount);
+        Button btn_sample = (Button) findViewById(R.id.btn_sample);
+        btn_sample.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Log.e("TIMED ANALYTICS", tedt_firstname.getFormFillingAnalyticsDataValue().toString());
+                FormFillingAnalytics.getInstance(getApplicationContext()).add(tedt_firstname.getFormFillingAnalyticsDataValue());
+                FormFillingAnalytics.getInstance(getApplicationContext()).add(tedt_lastname.getFormFillingAnalyticsDataValue());
+                FormFillingAnalytics.getInstance(getApplicationContext()).add(fsbr_loanamount.getFormFillingAnalyticsDataValue());
+                Log.e("TIMED ANALYTICS", FormFillingAnalytics.getInstance(getApplicationContext()).toString());
+//                FormFillingAnalytics.getInstance(getApplicationContext()).reset();
+                AndroidData.submitFormFillingAnalytics(getApplicationContext());
+            }
+        });
     }
 
     private void checkSessionState() {
@@ -144,7 +165,49 @@ public class SampleActivity extends Activity implements View.OnClickListener {
             checkSessionState();
         } else if (v == refreshButton) {
             checkSessionState();
+            AndroidData.sendPartnerApplicationData(getApplicationContext(), getAppFormData());
         }
+    }
+
+    public String getAppFormData() {
+        return  "{\n" +
+                "  \"reference_number\": \"string_" + System.currentTimeMillis() + "\",\n" +
+                "  \"application\": {},\n" +
+                "  \"verification_data\": {\n" +
+                "    \"name\": {\n" +
+                "      \"first\": \"string\",\n" +
+                "      \"middle\": \"string\",\n" +
+                "      \"last\": \"string\"\n" +
+                "    },\n" +
+                "    \"date_of_birth\": \"1995-03-08\",\n" +
+                "    \"employer\": \"string\",\n" +
+                "    \"phone\": {\n" +
+                "      \"mobile\": \"string\",\n" +
+                "      \"home\": \"string\"\n" +
+                "    },\n" +
+//                "    \"employment_period\": {\n" +
+//                "      \"start_date\": \"string\",\n" +
+//                "      \"end_date\": \"string\"\n" +
+//                "    },\n" +
+                "    \"mothers_maiden_name\": {\n" +
+                "      \"first\": \"string\",\n" +
+                "      \"middle\": \"string\",\n" +
+                "      \"last\": \"string\"\n" +
+                "    },\n" +
+                "    \"university\": \"string\",\n" +
+                "    \"email\": \"testuser.110915@gmail.com\",\n" +
+                "    \"address\": {\n" +
+                "      \"line_1\": \"string\",\n" +
+                "      \"line_2\": \"string\",\n" +
+                "      \"city\": \"string\",\n" +
+                "      \"administrative_division\": \"string\",\n" +
+                "      \"country_code\": \"string\",\n" +
+                "      \"postal_code\": \"string\",\n" +
+                "      \"latitude\": 0,\n" +
+                "      \"longitude\": 0\n" +
+                "    }\n" +
+                "  }\n" +
+                "}";
     }
 
 }
