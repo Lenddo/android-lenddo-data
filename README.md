@@ -14,7 +14,7 @@ Lenddo Data SDK ver 2.7
     3.  [Stopping Data Collection](#user-content-stopping-data-collection)
     4.  [Passing the Facebook Token](#user-content-passing-the-facebook-token)
     5.  [Passing the Application ID](#user-content-passing-the-application-id)
-7.  [Using Form Filling Analytics](#user-content-form-filling-analytics)
+7.  [Using Form Filling Analytics](#user-content-using-form-filling-analytics)
     1.  [Using the TimedWidget Views](#user-content-using-the-timedwidget-views)
     2.  [Collecting Form Analytics from your TimedWidget](#user-content-collecting-form-analytics-from-your-timedwidget) 
     3.  [Submitting the Data Collected](#user-content-submitting-the-data-collected)
@@ -264,7 +264,7 @@ Using Lenddo's custom TimedWidgets (TimedEditText, TimedSeekBar, TimedRadioButto
 
 ### Using the TimedWidget Views
 
-To add form filling analytics feature to your application form, replace all android views with custom views that implements the TimedWidget interface. For example, replace all EditText views in your application with the TimedEditText
+To add form filling analytics feature to your application form, replace all android views with custom views that implements the TimedWidget interface. For example, replace all EditText views in your application with the TimedEditText view.
 
 
 In your root layout container add the following xml namespace
@@ -318,7 +318,7 @@ Finally, call the submitFormFillingAnalytics() method to submit the data online.
 
 ### Clearing the Data Collected
 
-After submitting the collected data, the stored analytics data are automatically cleared. You may clear the stored analytics data without submitting the collected data online by calling the reset() method.
+After submitting the collected data, the stored analytics data are automatically cleared. You may clear the stored analytics data without submitting the collected data online by calling the reset() method. This will clear all collected form filling analytics data without sending it online.
 
 ```Java
         FormFillingAnalytics.getInstance(getApplicationContext()).reset();
