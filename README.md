@@ -14,6 +14,12 @@ Lenddo Data SDK ver 2.7
     3.  [Stopping Data Collection](#user-content-stopping-data-collection)
     4.  [Passing the Facebook Token](#user-content-passing-the-facebook-token)
     5.  [Passing the Application ID](#user-content-passing-the-application-id)
+7.  [Using Form Filling Analytics](#user-content-form-filling-analytics)
+    1.  [Using the TimedWidget Views](#user-content-using-the-timedwidget-views)
+    2.  [Collecting Form Analytics from your TimedWidget](#user-content-collecting-form-analytics-from-your-timedwidget) 
+    3.  [Submitting the Data Collected](#user-content-submitting-the-data-collected)
+    4.  [Clearing the Data Collected](#user-content-clearing-the-data-collected)
+
 
 ## Introduction 
 
@@ -250,3 +256,70 @@ To do this you can use AndroidData.startAndroidDataWithApplicationId() instead o
 
 If the application ID is not yet available at the time you want to start android data collection, you may instead
 use AndroidData.setApplicationId() which you can call at a later point in time.
+
+
+## Using Form Filling Analytics
+
+Using Lenddo's custom TimedWidgets (TimedEditText, TimedSeekBar, TimedRadioButton) it is possible to get form filling analytics with every user's input in the application form. To do this, your application must make use of the custom views that implements the TimedWidget interface.
+
+### Using the TimedWidget Views
+
+To add form filling analytics feature to your application form, replace all android views with custom views that implements the TimedWidget interface. For example, replace all EditText views in your application with the TimedEditText
+
+
+In your root layout container add the following xml namespace
+
+```xml
+        xmlns:lenddo="http://schemas.android.com/apk/res-auto"
+```
+
+```xml
+    <com.lenddo.core.uiwidgets.TimedEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tedt_firstname"
+        lenddo:enableFormFillingAnalytics="true"
+        lenddo:analyticsKeyTitle="firstname" />
+
+```
+
+Add the following properties, enableFormFillingAnalytics and analyticsKeyTitle  to enable the form filling analytics for the TimedEditText and add a key title that will identify this form field.
+
+```xml
+        lenddo:enableFormFillingAnalytics="true"
+        lenddo:analyticsKeyTitle="firstname"
+```
+
+
+### Collecting Form Analytics from your TimedWidget
+
+To collect the form filling analytics data from your TimedWidget, instantiate and use the TimedWidget object similar to its extended view. Example, for an EditText view use the TimedEditText class.
+
+In your Java code:
+
+```Java
+        TimedEditText tedt_firstname = (TimedEditText) findViewById(R.id.tedt_firstname);
+``` 
+
+To start collecting analytics data with your TimedEditText, simply add the TimedEditText object to the FormFillingAnalytics class
+
+```Java
+        FormFillingAnalytics.getInstance(getApplicationContext()).add(tedt_firstname.getFormFillingAnalyticsDataValue());
+```
+
+
+### Submitting the Data Collected
+
+Finally, call the submitFormFillingAnalytics() method to submit the data online.
+
+```Java
+        AndroidData.submitFormFillingAnalytics(getApplicationContext());
+```
+
+### Clearing the Data Collected
+
+After submitting the collected data, the stored analytics data are automatically cleared. You may clear the stored analytics data without submitting the collected data online by calling the reset() method.
+
+```Java
+        FormFillingAnalytics.getInstance(getApplicationContext()).reset();
+```
