@@ -2,13 +2,12 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.2"
-
+    buildToolsVersion "23.0.3"
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 21
-        versionCode 7
-        versionName "2.8"
+        targetSdkVersion 18
+        versionCode 8
+        versionName "2.8.1"
     }
 
     packagingOptions {
@@ -41,5 +40,6 @@ dependencies {
     compile 'commons-codec:commons-codec:1.10'
     compile 'com.google.code.gson:gson:2.6.2'
     compile 'com.android.support:support-v4:23.4.0'
+    compile 'com.android.support:design:23.4.0'
     //    compile 'com.android.support:appcompat-v7:23.1.1'
 }
