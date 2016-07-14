@@ -11,9 +11,8 @@ Lenddo Data SDK ver 2.8.1
 6.  [Installation Instructions](#user-content-installation-instructions)
     1.  [Initialize Data Collection](#user-content-initialize-data-collection)
     2.  [Starting Data Collection](#user-content-starting-data-collection)
-    3.  [Stopping Data Collection](#user-content-stopping-data-collection)
-    4.  [Passing the Facebook Token](#user-content-passing-the-facebook-token)
-    5.  [Passing the Application ID](#user-content-passing-the-application-id)
+    3.  [Passing the Facebook Token](#user-content-passing-the-facebook-token)
+    4.  [Passing the Application ID](#user-content-passing-the-application-id)
 7.  [Using Form Filling Analytics](#user-content-using-form-filling-analytics)
     1.  [Using the TimedWidget Views](#user-content-using-the-timedwidget-views)
     2.  [Collecting Form Analytics from your TimedWidget](#user-content-collecting-form-analytics-from-your-timedwidget) 
@@ -233,13 +232,6 @@ Please note that you only need to do this once for the current user. Data collec
 
 Once integration has been completed and you have started Data Collection during testing, notify your Lenddo representative to check on the data that have been collected and if changes are necessary.
 
-### Stopping Data Collection
-
-There are instances when you want to stop data collection, like when a user logs out of your app. To do so:
-
-```java
-AndroidData.clear(context);
-```
 
 ### Passing the Facebook Token
 
@@ -375,7 +367,7 @@ The Lenddo Data SDK can be configured to have a callback that will let the calli
         AndroidData.setup(getApplicationContext(), PSID, SECRET, clientOptions);
 ```
 
-If a data sending have failed, the Lenddo Data SDK will try to resend the gathered data the next time the call to *AndroidData.startAndroidData(context, clientId)* is encountered. Eventually, the *onDataSendingSuccess()* method will be called. 
+If a data sending have failed, the Lenddo Data SDK will try to resend the gathered data the next time the call to *AndroidData.startAndroidData(activity, clientId)* is encountered. Eventually, the *onDataSendingSuccess()* method will be called. 
 To remove a callback, pass a null object to registerDataSendingCompletionCallback() method.
 
 ```Java
