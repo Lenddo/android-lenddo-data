@@ -374,3 +374,10 @@ The Lenddo Data SDK can be configured to have a callback that will let the calli
 
         AndroidData.setup(getApplicationContext(), PSID, SECRET, clientOptions);
 ```
+
+If a data sending have failed, the Lenddo Data SDK will try to resend the gathered data the next time the call to *AndroidData.startAndroidData(context, clientId)* is encountered. Eventually, the *onDataSendingSuccess()* method will be called. 
+To remove a callback, pass a null object to registerDataSendingCompletionCallback() method.
+
+```Java
+        clientOptions.registerDataSendingCompletionCallback(null);
+```
