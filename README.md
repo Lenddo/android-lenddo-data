@@ -1,4 +1,4 @@
-Lenddo Data SDK ver 2.8
+Lenddo Data SDK ver 2.8.1
 =======================
 
 ## Table of Contents
@@ -19,7 +19,10 @@ Lenddo Data SDK ver 2.8
     2.  [Collecting Form Analytics from your TimedWidget](#user-content-collecting-form-analytics-from-your-timedwidget) 
     3.  [Submitting the Data Collected](#user-content-submitting-the-data-collected)
     4.  [Clearing the Data Collected](#user-content-clearing-the-data-collected)
-
+8.  [Configuring the Data SDK](#user-content-configuring-the-data-sdk)
+    1.  [Using WIFI internet connectivity instead of data plan ](#user-content-using-wifi-internet-connectivity-instead-of-data-plan)
+    2.  [Set Accent color for Material Theme dialog](#user-content-set-accent-color-for-material-theme-dialog) 
+    3.  [Registering a Data Sending Completion Callback](#user-content-registering-a-data-sending-completion-callback)
 
 ## Introduction 
 
@@ -322,4 +325,52 @@ After submitting the collected data, the stored analytics data are automatically
 
 ```Java
         FormFillingAnalytics.getInstance(getApplicationContext()).reset();
+```
+
+
+## Configuring the Data SDK
+
+The Lenddo Data SDK has a configuration that can be set programmatically. By setting the _ClientOptions_ object it is possible to configure the Lenddo Data SDK.
+
+### Using WIFI internet connectivity instead of data plan 
+
+```Java
+        ClientOptions clientOptions = new ClientOptions();
+        clientOptions.setWifiOnly(false);
+        AndroidData.setup(getApplicationContext(), PSID, SECRET, clientOptions);
+```
+
+### Set Accent color for Material Theme dialog  
+
+```Java
+        ClientOptions clientOptions = new ClientOptions();
+        clientOptions.setThemeColor("#aa2255");  // PINK Accent color
+        AndroidData.setup(getApplicationContext(), PSID, SECRET, clientOptions);
+```
+
+
+### Registering a Data Sending Completion Callback
+
+The Lenddo Data SDK can be configured to have a callback that will let the calling application run its own code upon data sending completion. The callback has an interface for both a  successful data sending and error on data submission.
+
+```Java
+        ClientOptions clientOptions = new ClientOptions();
+        clientOptions.registerDataSendingCompletionCallback(new OnDataSendingCompleteCallback() {
+            @Override
+            public void onDataSendingSuccess() {
+                // call your routines here
+                Log.d("Callback", "Data sending completed successfully!");
+            }
+
+            @Override
+            public void onDataSendingFailed(int statusCode, String errorMessage) {
+                // call your routines here
+                Log.d("Callback", "Data sending failed! statuscode:"+statusCode+" error:"+errorMessage);
+            }
+        });
+
+        String PSID = "YOUR PARTNER SCRIPT ID";
+        String SECRET = "YOUR API SECRET";
+
+        AndroidData.setup(getApplicationContext(), PSID, SECRET, clientOptions);
 ```
