@@ -328,7 +328,7 @@ The Lenddo Data SDK has a configuration that can be set programmatically. By set
 
 ```Java
         ClientOptions clientOptions = new ClientOptions();
-        clientOptions.setWifiOnly(false);
+        clientOptions.setWifiOnly(true);
         AndroidData.setup(getApplicationContext(), PSID, SECRET, clientOptions);
 ```
 
