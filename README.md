@@ -239,7 +239,9 @@ To enhance the amount of data collected, the Lenddo Data SDK accepts partner acc
 
 ```java               
 String provider = AndroidData.PROVIDER_FACEBOOK;
+// This is the ID that uniquely identifies the user on the selected Provider. For Facebook this would be the Facebook ID.
 String providerId = "Your Network ID";
+// This is the Access token you receive after finishing the oAuth 2.0 Sequence.
 String accessToken = "Your Network Access Token";
 long expiration;  // Network Expiration timestamp
 
