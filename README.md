@@ -1,4 +1,4 @@
-Lenddo Data SDK ver 2.8.1
+Lenddo Data SDK ver 2.9
 =======================
 
 ## Table of Contents
@@ -11,7 +11,7 @@ Lenddo Data SDK ver 2.8.1
 6.  [Installation Instructions](#user-content-installation-instructions)
     1.  [Initialize Data Collection](#user-content-initialize-data-collection)
     2.  [Starting Data Collection](#user-content-starting-data-collection)
-    3.  [Passing the Facebook Token](#user-content-passing-the-facebook-token)
+    3.  [Passing the Partner Access Token](#user-content-passing-the-partner-access-token)
     4.  [Passing the Application ID](#user-content-passing-the-application-id)
 7.  [Using Form Filling Analytics](#user-content-using-form-filling-analytics)
     1.  [Using the TimedWidget Views](#user-content-using-the-timedwidget-views)
@@ -233,14 +233,29 @@ Please note that you only need to do this once for the current user. Data collec
 Once integration has been completed and you have started Data Collection during testing, notify your Lenddo representative to check on the data that have been collected and if changes are necessary.
 
 
-### Passing the Facebook Token
+### Passing the Partner Access Tokens
 
-To enhance the amount of data collected, the Facebook access token can be passed to the Data SDK, below is an example on how it is done:
+To enhance the amount of data collected, the Lenddo Data SDK accepts partner access tokens from different providers. Below is an example on how it is done for Facebook:
+
+```java               
+String provider = AndroidData.PROVIDER_FACEBOOK;
+String providerId = "Your FB ID";
+String accessToken = "Your FB Access Token";
+long expiration;  // FB Expiration timestamp
+
+AndroidData.setProviderAccessToken(context, provider, providerId, accessToken, expiration);
+```
+
+Supported provider strings are as follows:
 
 ```java
-// AndroidData.setFacebookToken(Context context, String token, long expiration); 
-AndroidData.setFacebookToken(context, AccessToken.getCurrentAccessToken().getToken(),
-                      AccessToken.getCurrentAccessToken().getExpires().getTime());
+AndroidData.PROVIDER_FACEBOOK;
+AndroidData.PROVIDER_LINKEDIN;
+AndroidData.PROVIDER_YAHOO;
+AndroidData.PROVIDER_WINDOWSLIVE;
+AndroidData.PROVIDER_GOOGLE;
+AndroidData.PROVIDER_TWITTER;
+AndroidData.PROVIDER_KAKAOTALK;
 ```
 
 ### Passing the Application ID
@@ -350,15 +365,22 @@ The Lenddo Data SDK can be configured to have a callback that will let the calli
         clientOptions.registerDataSendingCompletionCallback(new OnDataSendingCompleteCallback() {
             @Override
             public void onDataSendingSuccess() {
-                // call your routines here
+                // call your routines here (response status code is 20x ~ 30x)
                 Log.d("Callback", "Data sending completed successfully!");
             }
 
             @Override
-            public void onDataSendingFailed(int statusCode, String errorMessage) {
+            public void onDataSendingError(int statusCode, String errorMessage) {
                 // call your routines here
                 Log.d("Callback", "Data sending failed! statuscode:"+statusCode+" error:"+errorMessage);
             }
+            
+            @Override
+            public void onDataSendingFailed(Throwable t) {
+                // call your routines here
+                Log.e("Callback", "Network connection failure! " + t.getMEssage());
+            }
+
         });
 
         String PSID = "YOUR PARTNER SCRIPT ID";
