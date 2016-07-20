@@ -239,9 +239,9 @@ To enhance the amount of data collected, the Lenddo Data SDK accepts partner acc
 
 ```java               
 String provider = AndroidData.PROVIDER_FACEBOOK;
-String providerId = "Your FB ID";
-String accessToken = "Your FB Access Token";
-long expiration;  // FB Expiration timestamp
+String providerId = "Your Network ID";
+String accessToken = "Your Network Access Token";
+long expiration;  // Network Expiration timestamp
 
 AndroidData.setProviderAccessToken(context, provider, providerId, accessToken, expiration);
 ```
