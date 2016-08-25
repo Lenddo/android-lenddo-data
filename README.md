@@ -1,4 +1,4 @@
-Lenddo Data SDK ver 2.9
+Lenddo Data SDK ver 2.10
 =======================
 
 ## Table of Contents
@@ -154,7 +154,7 @@ dependencies {
 }
 ```
 
-In the **build.gradle** of your app, set the targetSdkVersion to at most 22 only.
+In the **build.gradle** of your app, set the targetSdkVersion to at most 22 to automatically accept the Android Permissions. Setting targetSdkVersion to 23 will trigger the new Android M Permission Model and the Lenddo Data SDK will popup a request for the required permissions. In this case, the user must accept  all permission requests for the data sdk to function properly.
 
 ```java
 defaultConfig {
