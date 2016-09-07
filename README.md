@@ -1,4 +1,4 @@
-Lenddo Data SDK ver 2.10
+Lenddo Data SDK ver 2.12
 =======================
 
 ## Table of Contents
@@ -22,7 +22,9 @@ Lenddo Data SDK ver 2.10
     1.  [Using WIFI internet connectivity instead of data plan ](#user-content-using-wifi-internet-connectivity-instead-of-data-plan)
     2.  [Set Accent color for Material Theme dialog](#user-content-set-accent-color-for-material-theme-dialog) 
     3.  [Registering a Data Sending Completion Callback](#user-content-registering-a-data-sending-completion-callback)
-
+    4.  [Enabling Log Messages](#user-content-enabling-log-messages)
+    5.  [Configuring API Gateway host](#user-content-configuring-api-gateway-host) 
+    
 ## Introduction 
 
 The Lenddo Data SDK (LenddoDataSDK) allows you to collect information in order for Lenddo to verify the user's information and enhance its scoring capabilities. The LenddoDataSDK collects information in the background and can be activated as soon as the user has downloaded the app, given permissions and logged into the app.
@@ -397,3 +399,20 @@ To remove a callback, pass a null object to registerDataSendingCompletionCallbac
 ```Java
         clientOptions.registerDataSendingCompletionCallback(null);
 ```
+
+### Enabling Log Messages
+
+The Lenddo Data SDK log messages are disabled by default and can be enabled manually by setting the following configuration.
+
+```Java
+        clientOptions.enableLogDisplay(true);
+```
+
+### Configuring API Gateway host
+
+To configure the Lenddo Data SDK API Gateway, the following code must be used.
+
+```Java
+        clientOptions.setApiGatewayUrl("https://gateway.partner-service.link");
+```
+
