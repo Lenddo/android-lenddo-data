@@ -118,6 +118,7 @@ A sample app is provided with the SDK package for you to test the Data SDK. If y
 
         ```java
         ClientOptions clientOptions = new ClientOptions();
+        clientOptions.enableLogDisplay(true);
 
         //Uncomment the next line when you want data to be uploaded only when wifi is available
         //clientOptions.setWifiOnly(true);
