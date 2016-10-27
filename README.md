@@ -13,6 +13,7 @@ Lenddo Data SDK ver 2.15
     2.  [Starting Data Collection](#user-content-starting-data-collection)
     3.  [Passing the Partner Access Token](#user-content-passing-the-partner-access-token)
     4.  [Passing the Application ID](#user-content-passing-the-application-id)
+    5.  [Sending Application Data](#user-content-sending-application-data)
 7.  [Using Form Filling Analytics](#user-content-using-form-filling-analytics)
     1.  [Using the TimedWidget Views](#user-content-using-the-timedwidget-views)
     2.  [Collecting Form Analytics from your TimedWidget](#user-content-collecting-form-analytics-from-your-timedwidget) 
@@ -272,6 +273,53 @@ To do this you can use AndroidData.startAndroidDataWithApplicationId() instead o
 If the application ID is not yet available at the time you want to start android data collection, you may instead
 use AndroidData.setApplicationId() which you can call at a later point in time.
 
+### Sending Application Data
+
+LenddoSDK let partner send application data which contains verification data that is use for verification purposes and partner data that might also be helpful for verification but unlike verification data, partner data is a free form data. Below is an example on how to send application data.
+
+```java
+    // Set up application data
+    ApplicationPartnerData data = new ApplicationPartnerData();
+
+    // Use Client Id as reference number
+    data.reference_number = "CLIENT_ID";
+    
+    // Initialize partner data (you can add any data (key-values pair))
+    data.application = new JsonObject();
+
+    // Initialize verification data
+    data.verification_data = new ApplicationPartnerData.verification_data();
+    data.verification_data.address = new ApplicationPartnerData.verification_data.address();
+    data.verification_data.employment_period = new ApplicationPartnerData.verification_data.employment_period();
+    data.verification_data.mothers_maiden_name = new ApplicationPartnerData.verification_data.mothers_maiden_name();
+    data.verification_data.name = new ApplicationPartnerData.verification_data.name();
+    data.verification_data.phone = new ApplicationPartnerData.verification_data.phone();
+
+    // Set Values for verification data
+    data.verification_data.name.first = "string";
+    data.verification_data.name.middle = "string";
+    data.verification_data.name.last = "string";
+    data.verification_data.date_of_birth = "1995-03-08";
+    data.verification_data.employer = "string";
+    data.verification_data.phone.mobile = "string";
+    data.verification_data.phone.home = "string";
+    data.verification_data.mothers_maiden_name.first = "string";
+    data.verification_data.mothers_maiden_name.middle = "string";
+    data.verification_data.mothers_maiden_name.last = "string";
+    data.verification_data.university = "string";
+    data.verification_data.email = "partner@email.com";
+    data.verification_data.address.line_1 = "string";
+    data.verification_data.address.line_2 = "string";
+    data.verification_data.address.administrative_division = "string";
+    data.verification_data.address.city = "string";
+    data.verification_data.address.country_code = "string";
+    data.verification_data.address.postal_code = "string";
+    data.verification_data.address.latitude = 0;
+    data.verification_data.address.longitude = 0;
+
+    String payload = new Gson().toJson(data).toString()
+    AndroidData.sendPartnerApplicationData(context, payload);
+```
 
 ## Using Form Filling Analytics
 
