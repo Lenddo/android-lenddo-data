@@ -1,4 +1,4 @@
-Lenddo Data SDK ver 2.17
+Lenddo Data SDK ver 2.18
 =======================
 
 ## Table of Contents
@@ -11,7 +11,7 @@ Lenddo Data SDK ver 2.17
 6.  [Installation Instructions](#user-content-installation-instructions)
     1.  [Initialize Data Collection](#user-content-initialize-data-collection)
     2.  [Starting Data Collection](#user-content-starting-data-collection)
-    3.  [Passing the Partner Access Token](#user-content-passing-the-partner-access-token)
+    3.  [Passing the Provider Access Token](#user-content-passing-the-provider-access-token)
     4.  [Passing the Application ID](#user-content-passing-the-application-id)
     5.  [Sending Application Data](#user-content-sending-application-data)
 7.  [Using Form Filling Analytics](#user-content-using-form-filling-analytics)
@@ -133,7 +133,7 @@ A sample app is provided with the SDK package for you to test the Data SDK. If y
 
         You may have to uncomment some options or provide additional information. This is on a case to case basis and will be informed accordingly.
 
-5.  Run the app. You will be presented with a sample form that allows you to start data collection as well as see various status messages. Enter a unique value for the client ID and click on send to start the data collection process. Note that the client ID would correspond to the user id in or application id in your own application.
+5.  Run the app. You will be presented with a sample form that allows you to start data collection as well as see various status messages. Enter a unique value for the application ID and click on send to start the data collection process. Note that the application ID would correspond to the user in your own application.
 6.  Notify your Lenddo representative to check on the data that have been collected and if changes are necessary.
 
 ## Installation Instructions
@@ -229,7 +229,7 @@ If you did not have an application class before, you need to add a android:name 
 You may start data collection at any time, though ideally it is done after a user has successfully logged in to your app. You are required to pass a string that identifies the user (e.g. user id) as the second parameter. This allows you and our data science team to associate acquired data with the specific user at a later point in time. Below is the sample code to trigger data collection:
 
 ```java
-AndroidData.startAndroidData(this, “USER_ID_OR_CLIENT_ID”);
+AndroidData.startAndroidData(this, “USER_ID_OR_APPLICATION_ID”);
 ```
 
 Please note that you only need to do this once for the current user. Data collection will automatically start even on the next session of your app unless it was stopped using **AndroidData.clear()** or your app was uninstalled or had its data cleared.
@@ -237,9 +237,9 @@ Please note that you only need to do this once for the current user. Data collec
 Once integration has been completed and you have started Data Collection during testing, notify your Lenddo representative to check on the data that have been collected and if changes are necessary.
 
 
-### Passing the Partner Access Tokens
+### Passing the Provider Access Tokens
 
-To enhance the amount of data collected, the Lenddo Data SDK accepts partner access tokens from different providers. Below is an example on how it is done for Facebook:
+To enhance the amount of data collected, the Lenddo Data SDK accepts provider access tokens from different providers. Below is an example on how it is done for Facebook:
 
 ```java               
 String provider = AndroidData.PROVIDER_FACEBOOK;
@@ -281,8 +281,8 @@ LenddoSDK let partner send application data which contains verification data tha
     // Set up application data
     ApplicationPartnerData data = new ApplicationPartnerData();
 
-    // Use Client Id as reference number
-    data.reference_number = "CLIENT_ID";
+    // Use Application Id as reference number
+    data.reference_number = "APPLICATION_ID";
     
     // Initialize partner data (you can add any data (key-values pair))
     data.application = new JsonObject();
@@ -442,7 +442,7 @@ The Lenddo Data SDK can be configured to have a callback that will let the calli
         AndroidData.setup(getApplicationContext(), PSID, SECRET, clientOptions);
 ```
 
-If a data sending have failed, the Lenddo Data SDK will try to resend the gathered data the next time the call to *AndroidData.startAndroidData(activity, clientId)* is encountered. Eventually, the *onDataSendingSuccess()* method will be called. 
+If a data sending have failed, the Lenddo Data SDK will try to resend the gathered data the next time the call to *AndroidData.startAndroidData(activity, applicationId)* is encountered. Eventually, the *onDataSendingSuccess()* method will be called. 
 To remove a callback, pass a null object to registerDataSendingCompletionCallback() method.
 
 ```Java
@@ -457,11 +457,4 @@ The Lenddo Data SDK log messages are disabled by default and can be enabled manu
         clientOptions.enableLogDisplay(true);
 ```
 
-### Configuring API Gateway host
-
-To configure the Lenddo Data SDK API Gateway, the following code must be used.
-
-```Java
-        clientOptions.setApiGatewayUrl("https://gateway.partner-service.link");
-```
 
