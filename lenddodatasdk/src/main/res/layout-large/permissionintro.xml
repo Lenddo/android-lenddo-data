@@ -8,32 +8,67 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
-        android:orientation="vertical"
-        android:layout_margin="20dp">
+        android:layout_marginBottom="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
 
         <ImageView
-            android:src="@drawable/graphics_intro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scaleType="fitCenter"/>
+            android:scaleType="fitCenter"
+            android:src="@drawable/graphics_intro" />
 
         <TextView
-            android:text="@string/grant_access"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
             android:layout_gravity="center_horizontal"
-            android:textSize="30sp"
-            android:textColor="#ffffff" />
+            android:layout_marginTop="30dp"
+            android:text="@string/grant_access"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
 
         <com.lenddo.data.utils.JustifyTextView
-            android:text="@string/permission_intro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
             android:layout_marginLeft="20dp"
-            android:textSize="24sp"
-            android:textColor="#ffffff" />
+            android:layout_marginTop="30dp"
+            android:text="@string/permission_intro"
+            android:textColor="#ffffff"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="right|center_vertical"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_perm_intro_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:gravity="right|center_vertical"
+            android:paddingRight="20dp"
+            android:text="@string/cancel_allcaps"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btn_perm_intro_continue"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:gravity="right|center_vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="@string/continue_allcaps"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
 
     </LinearLayout>
 
