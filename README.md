@@ -1,4 +1,4 @@
-Lenddo Data SDK ver 2.18
+Lenddo Data SDK ver 2.20.1
 =======================
 
 ## Table of Contents
@@ -24,7 +24,7 @@ Lenddo Data SDK ver 2.18
     2.  [Set Accent color for Material Theme dialog](#user-content-set-accent-color-for-material-theme-dialog) 
     3.  [Registering a Data Sending Completion Callback](#user-content-registering-a-data-sending-completion-callback)
     4.  [Enabling Log Messages](#user-content-enabling-log-messages)
-    5.  [Configuring API Gateway host](#user-content-configuring-api-gateway-host) 
+
     
 ## Introduction 
 
@@ -237,7 +237,7 @@ Please note that you only need to do this once for the current user. Data collec
 Once integration has been completed and you have started Data Collection during testing, notify your Lenddo representative to check on the data that have been collected and if changes are necessary.
 
 
-### Passing the Provider Access Tokens
+### Passing the Provider Access Token
 
 To enhance the amount of data collected, the Lenddo Data SDK accepts provider access tokens from different providers. Below is an example on how it is done for Facebook:
 
@@ -247,9 +247,10 @@ String provider = AndroidData.PROVIDER_FACEBOOK;
 String providerId = "Your Network ID";
 // This is the Access token you receive after finishing the oAuth 2.0 Sequence.
 String accessToken = "Your Network Access Token";
+String extraData = "Optional extra data. refreshtokens for KakaoStory";
 long expiration;  // Network Expiration timestamp
 
-AndroidData.setProviderAccessToken(context, provider, providerId, accessToken, expiration);
+AndroidData.setProviderAccessToken(context, provider, providerId, accessToken, extraData, expiration);
 ```
 
 Supported provider strings are as follows:
@@ -435,7 +436,7 @@ The Lenddo Data SDK can be configured to have a callback that will let the calli
             }
 
         });
-
+I
         String PSID = "YOUR PARTNER SCRIPT ID";
         String SECRET = "YOUR API SECRET";
 
