@@ -62,7 +62,6 @@ public class ScoringFragment extends Fragment implements View.OnClickListener {
     private CheckBox cb_enableCalendarEmailHashing;
     private CheckBox cb_enableCustomMPermission;
     private Button btn_start;
-    private Button btn_sms_permission;
 
     private TextView tv_applicationId;
     private TextView tv_deviceId;
@@ -106,7 +105,7 @@ public class ScoringFragment extends Fragment implements View.OnClickListener {
         initViews(fragmentView);
         updateDisplay(getContext());
         if (AndroidData.statisticsEnabled(getContext())) {
-            edt_applicationId.setText(AndroidDataUtils.getClientId(getContext()));
+            edt_applicationId.setText(AndroidDataUtils.getApplicationId(getContext()));
             edt_applicationId.setSelection(edt_applicationId.length());
         }
         return fragmentView;
@@ -177,9 +176,6 @@ public class ScoringFragment extends Fragment implements View.OnClickListener {
                     btn_start.setText("START DATA SDK");
                 }
                 break;
-            case R.id.btn_sms_permission:
-                requestPermissions(new String[] {Manifest.permission.READ_SMS},12333);
-                break;
             default:
                 break;
         }
@@ -208,8 +204,6 @@ public class ScoringFragment extends Fragment implements View.OnClickListener {
         cb_enableCustomMPermission = (CheckBox) fragmentView.findViewById(R.id.cb_enableCustomMPermission);
         btn_start = (Button) fragmentView.findViewById(R.id.btn_start);
         btn_start.setOnClickListener(this);
-        btn_sms_permission = (Button) fragmentView.findViewById(R.id.btn_sms_permission);
-        btn_sms_permission.setOnClickListener(this);
 
         tv_applicationId = (TextView) fragmentView.findViewById(R.id.tv_applicationId);
         tv_deviceId = (TextView) fragmentView.findViewById(R.id.tv_deviceId);
@@ -278,7 +272,7 @@ public class ScoringFragment extends Fragment implements View.OnClickListener {
                     @Override
                     public void run() {
                         updateDisplay(getContext());
-                        tv_applicationId.setText(Html.fromHtml("Application ID: <b>"+AndroidDataUtils.getClientId(getContext())));
+                        tv_applicationId.setText(Html.fromHtml("Application ID: <b>"+AndroidDataUtils.getApplicationId(getContext())));
                         tv_deviceId.setText(Html.fromHtml("Device ID: <b>"+AndroidDataUtils.getDeviceUID(getContext())));
                         tv_serviceToken.setText(Html.fromHtml("Service Token: <b>"+ AndroidDataUtils.getServiceToken(getContext())));
                         tv_installationId.setText(Html.fromHtml("Installation ID: <b>"+AndroidDataUtils.getInstallationId(getContext())));
@@ -323,7 +317,7 @@ public class ScoringFragment extends Fragment implements View.OnClickListener {
 
     private void updateDisplay(Context context) {
         if (AndroidData.statisticsEnabled(getContext())) {
-            tv_applicationId.setText(Html.fromHtml("Application ID: <b>"+AndroidDataUtils.getClientId(context)));
+            tv_applicationId.setText(Html.fromHtml("Application ID: <b>"+AndroidDataUtils.getApplicationId(context)));
             tv_deviceId.setText(Html.fromHtml("Device ID: <b>"+AndroidDataUtils.getDeviceUID(context)));
             tv_serviceToken.setText(Html.fromHtml("Service Token: <b>"+AndroidDataUtils.getServiceToken(context)));
             tv_installationId.setText(Html.fromHtml("Installation ID: <b>"+AndroidDataUtils.getInstallationId(context)));
@@ -331,7 +325,7 @@ public class ScoringFragment extends Fragment implements View.OnClickListener {
             enableWidgets(false);
             btn_start.setText("STOP&CLEAR DATA SDK");
         } else {
-            tv_applicationId.setText(Html.fromHtml("Application ID: <b>"+AndroidDataUtils.getClientId(context)));
+            tv_applicationId.setText(Html.fromHtml("Application ID: <b>"+AndroidDataUtils.getApplicationId(context)));
 //            tv_deviceId.setText(Html.fromHtml("Device ID: <b>"+AndroidDataUtils.getDeviceUID(context)));
             tv_serviceToken.setText(Html.fromHtml("Service Token: <b>"+AndroidDataUtils.getServiceToken(context)));
             tv_installationId.setText(Html.fromHtml("Installation ID: <b>"+AndroidDataUtils.getInstallationId(context)));
