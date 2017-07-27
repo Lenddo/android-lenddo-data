@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- PROD -->
+    <string name="partner_script_id">5671d773aa961243c55ee6ad</string>
+    <string name="api_secret">se7q075RagJBn9y5aPHGJ0mTVQpJkpfK1G85jumokHrvMJxV/necLaI+zmQ08E4vhzR9WyV7HgyYjuxEbEAktA==</string>
+
+    <!-- FOR KOREAN GATEWAY -->
+    <string name="partner_script_id_kr">56b424e5aa9612216a72e8c7</string>
+    <string name="api_secret_kr">xskK9oro19LZ1aHawIa9JDY8cNxaGnMae1IV4ttrPzT3IJN7hpzF0tNAIqTEWB/OHSileJbsmdK4vNF/X/1FEQ==</string>
+</resources>

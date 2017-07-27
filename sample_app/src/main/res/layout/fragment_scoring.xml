@@ -23,6 +23,8 @@
                     android:id="@+id/edt_applicationId"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:singleLine="true"
                     android:hint="Application ID"/>
             </android.support.design.widget.TextInputLayout>
             <TextView
@@ -163,12 +165,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Enable Custom M Permission"/>
-
-            <Button
-                android:id="@+id/btn_sms_permission"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Request SMS Permission"/>
 
             <Button
                 android:id="@+id/btn_start"

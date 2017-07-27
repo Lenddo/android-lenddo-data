@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">LenddoData</string>
+    <string name="grant_access">Memberikan akses</string>
+    <string name="permission_intro">Tolong beri kami izin akses ke Telepon, SMS, Kontak, Lokasi, dan Kalender untuk memberi kredit anda. Kami mengambil perlindungan data dengan sangat serius.</string>
+    <string name="learnmore_allcaps">Belajarlah lagi</string>
+    <string name="back_allcaps">KEMBALI</string>
+    <string name="cancel_allcaps">Batalkan</string>
+    <string name="done_allcaps">Sudah</string>
+    <string name="submit_allcaps">mengajukan</string>
+    <string name="continue_allcaps">TERUS</string>
+
+    <string name="permission_rationale_partial">Untuk terus menggunakan aplikasi, Anda harus memberikan izin berikut:</string>
+    <string name="permission_rationale_complete">Untuk memastikan bahwa Anda memahami apa yang sebenarnya kami kumpulkan, Kami berikan rincian sebagai berikut:</string>
+
+    <string name="permission_title_sms">SMS</string>
+    <string name="permission_title_phone">Telepon</string>
+    <string name="permission_title_location">Lokasi</string>
+    <string name="permission_title_contacts">Kontak</string>
+    <string name="permission_title_calendar">Kalender</string>
+
+    <string name="permission_detail_sms">Kami memanfaatkan akses terhadap pesan SMS Anda untuk memastikan daftar orang-orang yang paling sering Anda kirimi pesan. Hal ini membantu kita membangun "social graph" dengan memanfaatkan data yang Anda berikan kepada kami.</string>
+    <string name="permission_detail_phone">Kami mempergunakan status telepon untuk mendapatkan ID perangkat Android Anda, yang dikirim ke server Kami dan digunakan untuk tujuan analisis dan pelaporan. Kami mengakses log panggilan Anda untuk menentukan daftar orang yang paling sering Anda hubungi. Hal ini membantu kita membangun "social graph" dengan memanfaatkan data yang Anda berikan kepada kami.</string>
+    <string name="permission_detail_location">Kami mempelajari altivitas lokasi Anda secara berkala. Ini berguna untuk memperkirakan lokasi mana saja yang paling sering dikunjungi dengan akurat. Kami menggunakan ini sebagai indikator untuk membangun nilai kredit Anda.</string>
+    <string name="permission_detail_contacts">Kami mengakses kontak Anda untuk menentukan daftar orang yang ada dalam daftar kontak Anda. Hal ini membantu kita membangun _social graph_ dengan memanfaatkan data yang Anda berikan kepada kami. Kami tidak akan menggunakan informasi ini untuk menghubungi teman Anda.</string>
+    <string name="permission_detail_calendar">Memiliki akses ke kalender Anda membantu kita menentukan waktu tersibuk Anda. Orang-orang yang sibuk siang hari memiliki perilaku kredit yang berbeda dibanding orang yang sibuk di malam hari. Kami menggunakan ini sebagai indikator untuk membangun nilai kredit Anda.</string>
+
+    <string name="feedback_title">Bantu kami memperbaiki</string>
+    <string name="feedback_inquiry">Mengapa Anda tak bersedia memberikan izin pada kami?</string>
+    <string name="feedback1">Saya khawatir atas privasi data saya</string>
+    <string name="feedback2">Saya belum jelas mengenai apa manfaat dari memberi izin ini bagi saya.</string>
+    <string name="feedback3">Saya belum jelas mengenai bagaimana data saya akan digunakan.</string>
+    <string name="feedback4">Lainnya</string>
+    <string name="thank_you_title">Terima Kasih</string>
+    <string name="thank_you_detail">Pendapat Anda penting bagi kami dan akan membantu kami memperbaiki pengalaman produk.</string>
+
+    // Validation Message
+    <string name="validation_msg_unsupported_exception">Validation is disabled.</string>
+    <string name="validation_msg_mandatory_field">This field is required.</string>
+    <string name="validation_msg_validation_disabled">Validation is disabled.</string>
+    <string name="validation_msg_invalid_date">Invalid date.</string>
+    <string name="validation_msg_invalid_date_format">Invalid date format.</string>
+    <string name="validation_msg_invalid_email_format">Invalid email format.</string>
+
+</resources>

@@ -108,7 +108,7 @@ public class VerificationFragment extends Fragment implements View.OnClickListen
         initViews(fragmentView);
 
         if (AndroidData.statisticsEnabled(getContext())) {
-            tedt_referenceno.setText(AndroidDataUtils.getClientId(getContext()));
+            tedt_referenceno.setText(AndroidDataUtils.getApplicationId(getContext()));
             tedt_referenceno.setSelection(tedt_referenceno.length());
         }
         return fragmentView;

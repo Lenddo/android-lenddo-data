@@ -1,4 +1,4 @@
-Lenddo Data SDK ver 2.20.3
+Lenddo Data SDK ver 2.21.0
 =======================
 
 ## Table of Contents
@@ -138,7 +138,7 @@ A sample app is provided with the SDK package for you to test the Data SDK. If y
 
 ## Installation Instructions
 
-Extract the LenddoData SDK package that was provided if you have not done so already, it should contain the _lenddodatasdk_ folder. Copy that folder to your project.
+Extract the LenddoData SDK package that was provided if you have not done so already, it should contain the _lenddodatasdk_ folder. Import that folder to your project as a new module.
 
 In the **settings.gradle** of your project
 
@@ -247,10 +247,14 @@ String provider = AndroidData.PROVIDER_FACEBOOK;
 String providerId = "Your Network ID";
 // This is the Access token you receive after finishing the oAuth 2.0 Sequence.
 String accessToken = "Your Network Access Token";
-String extraData = "Optional extra data. refreshtokens for KakaoStory";
+String extraData = "Optional extra data. refreshtoken for KakaoStory";
 long expiration;  // Network Expiration timestamp
 
-AndroidData.setProviderAccessToken(context, provider, providerId, accessToken, extraData, expiration);
+// The extradata variable passed to setProviderAccessToken must be an instance of JsonObject
+JsonObject extra_data_json = new JsonObject();
+extra_data_json.addProperty("refresh_token", extraData);
+
+AndroidData.setProviderAccessToken(context, provider, providerId, accessToken, extra_data_json, expiration);
 ```
 
 Supported provider strings are as follows:
