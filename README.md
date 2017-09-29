@@ -32,7 +32,7 @@ The Lenddo Data SDK (LenddoDataSDK) allows you to collect information in order f
 
 ## Pre-requisites 
 
-Make sure you have the latest version of Android Studio properly setup and installed, please refer to the Google Developer site for the instructions [Android Studio Download and Installation Instructions.](https://developer.android.com/sdk/index.html)
+Make sure you have Android Studio properly setup and installed, please refer to the Google Developer site for the instructions [Android Studio Download and Installation Instructions.](https://developer.android.com/sdk/index.html) Currently the supported IDE is up to version 2.3.3. The SDK is not compatible with the Beta release of Android Studio. Also, use API 25 Build tools. API 26 build tools are not yet compatible as of this moment.
 
 Before incorporating the Data SDK into your app, you should be provided with the following information:
 
@@ -186,6 +186,7 @@ public class  SampleApp extends Application {
        super.onCreate();
 
        ClientOptions clientOptions = new ClientOptions();
+       clientOptions.enableLogDisplay(BuildConfig.DEBUG);
 
        //Uncomment the next line when you want data to be uploaded only when wifi is available
        //clientOptions.setWifiOnly(true);
@@ -226,13 +227,13 @@ If you did not have an application class before, you need to add a android:name 
 
 ### Starting Data Collection
 
-You may start data collection at any time, though ideally it is done after a user has successfully logged in to your app. You are required to pass a string that identifies the user (e.g. user id) as the second parameter. This allows you and our data science team to associate acquired data with the specific user at a later point in time. Below is the sample code to trigger data collection:
+You may start data collection at any time, though ideally it is done after a user has successfully logged in to your app and before the Lenddo Onboarding SDK is started. You are required to pass a string that identifies the user (e.g. user id) as the second parameter. This allows you and our data science team to associate acquired data with the specific user at a later point in time. Below is the sample code to trigger data collection:
 
 ```java
 AndroidData.startAndroidData(this, “USER_ID_OR_APPLICATION_ID”);
 ```
 
-Please note that you only need to do this once for the current user. Data collection will automatically start even on the next session of your app unless it was stopped using **AndroidData.clear()** or your app was uninstalled or had its data cleared.
+Please note that you only need to do this once for the current user. Data collection will automatically start even on the next session of your app unless your app was uninstalled or had its data cleared.
 
 Once integration has been completed and you have started Data Collection during testing, notify your Lenddo representative to check on the data that have been collected and if changes are necessary.
 
