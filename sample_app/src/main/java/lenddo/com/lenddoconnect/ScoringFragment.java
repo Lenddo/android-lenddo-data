@@ -17,6 +17,7 @@ import android.widget.CheckBox;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.lenddo.core.LenddoCoreUtils;
 import com.lenddo.data.AndroidData;
 import com.lenddo.data.listeners.OnDataSendingCompleteCallback;
 import com.lenddo.data.models.ClientOptions;
@@ -53,6 +54,7 @@ public class ScoringFragment extends Fragment implements View.OnClickListener {
     private CheckBox cb_enableBrowserHistory;
     private CheckBox cb_enableLocation;
     private CheckBox cb_enableBatteryCharge;
+    private CheckBox cb_enableGalleryMetaData;
     private CheckBox cb_enableSmsBody;
     private CheckBox cb_enablePhoneNumberHashing;
     private CheckBox cb_enableContactsNameHAshing;
@@ -194,6 +196,7 @@ public class ScoringFragment extends Fragment implements View.OnClickListener {
         cb_enableBrowserHistory = (CheckBox) fragmentView.findViewById(R.id.cb_enableBrowserHistory);
         cb_enableLocation = (CheckBox) fragmentView.findViewById(R.id.cb_enableLocation);
         cb_enableBatteryCharge = (CheckBox) fragmentView.findViewById(R.id.cb_enableBatteryCharge);
+        cb_enableGalleryMetaData = (CheckBox) fragmentView.findViewById(R.id.cb_enableGalleryMetaData);
         cb_enableSmsBody = (CheckBox) fragmentView.findViewById(R.id.cb_enableSmsBody);
         cb_enablePhoneNumberHashing = (CheckBox) fragmentView.findViewById(R.id.cb_enablePhoneNumberHashing);
         cb_enableContactsNameHAshing = (CheckBox) fragmentView.findViewById(R.id.cb_enableContactsNameHashing);
@@ -246,6 +249,7 @@ public class ScoringFragment extends Fragment implements View.OnClickListener {
         if (!cb_enableBrowserHistory.isChecked()) clientOptions.disableBrowserHistoryDataCollection();
         if (!cb_enableLocation.isChecked()) clientOptions.disableLocationDataCollection();
         if (!cb_enableBatteryCharge.isChecked()) clientOptions.disableBattChargeDataCollection();
+        if (!cb_enableGalleryMetaData.isChecked()) clientOptions.disableGalleryMetaDataCollection();
         // SMS Body Content
         if (!cb_enableSmsBody.isChecked()) clientOptions.disableSMSBodyCollection();
         //Data Hashing
@@ -275,7 +279,7 @@ public class ScoringFragment extends Fragment implements View.OnClickListener {
                         tv_applicationId.setText(Html.fromHtml("Application ID: <b>"+AndroidDataUtils.getApplicationId(getContext())));
                         tv_deviceId.setText(Html.fromHtml("Device ID: <b>"+AndroidDataUtils.getDeviceUID(getContext())));
                         tv_serviceToken.setText(Html.fromHtml("Service Token: <b>"+ AndroidDataUtils.getServiceToken(getContext())));
-                        tv_installationId.setText(Html.fromHtml("Installation ID: <b>"+AndroidDataUtils.getInstallationId(getContext())));
+                        tv_installationId.setText(Html.fromHtml("Installation ID: <b>"+ LenddoCoreUtils.getInstallationId(getContext())));
                         tv_hasUploadedInitial.setText(Html.fromHtml("Data Sending Callback: <b>Success</b>"));
                     }
                 });
@@ -289,7 +293,7 @@ public class ScoringFragment extends Fragment implements View.OnClickListener {
                         public void run() {
                             updateDisplay(getContext());
                             tv_serviceToken.setText(Html.fromHtml("Service Token: <b>"+AndroidDataUtils.getServiceToken(getContext())));
-                            tv_installationId.setText(Html.fromHtml("Installation ID: <b>"+AndroidDataUtils.getInstallationId(getContext())));
+                            tv_installationId.setText(Html.fromHtml("Installation ID: <b>"+LenddoCoreUtils.getInstallationId(getContext())));
                             tv_hasUploadedInitial.setText(Html.fromHtml("Data Sending Callback: <b>Error:</b>"+errorMessage));
                         }
                     });
@@ -304,7 +308,7 @@ public class ScoringFragment extends Fragment implements View.OnClickListener {
                         public void run() {
                             updateDisplay(getContext());
                             tv_serviceToken.setText(Html.fromHtml("Service Token: <b>"+AndroidDataUtils.getServiceToken(getContext())));
-                            tv_installationId.setText(Html.fromHtml("Installation ID: <b>"+AndroidDataUtils.getInstallationId(getContext())));
+                            tv_installationId.setText(Html.fromHtml("Installation ID: <b>"+LenddoCoreUtils.getInstallationId(getContext())));
                             tv_hasUploadedInitial.setText(Html.fromHtml("Data Sending Callback: <b>Failed</b>"));
 
                         }
@@ -320,7 +324,7 @@ public class ScoringFragment extends Fragment implements View.OnClickListener {
             tv_applicationId.setText(Html.fromHtml("Application ID: <b>"+AndroidDataUtils.getApplicationId(context)));
             tv_deviceId.setText(Html.fromHtml("Device ID: <b>"+AndroidDataUtils.getDeviceUID(context)));
             tv_serviceToken.setText(Html.fromHtml("Service Token: <b>"+AndroidDataUtils.getServiceToken(context)));
-            tv_installationId.setText(Html.fromHtml("Installation ID: <b>"+AndroidDataUtils.getInstallationId(context)));
+            tv_installationId.setText(Html.fromHtml("Installation ID: <b>"+LenddoCoreUtils.getInstallationId(context)));
             tv_uploadMode.setText(Html.fromHtml("Upload Mode: <b>"+spn_connections.getSelectedItem().toString()));
             enableWidgets(false);
             btn_start.setText("STOP&CLEAR DATA SDK");
@@ -328,7 +332,7 @@ public class ScoringFragment extends Fragment implements View.OnClickListener {
             tv_applicationId.setText(Html.fromHtml("Application ID: <b>"+AndroidDataUtils.getApplicationId(context)));
 //            tv_deviceId.setText(Html.fromHtml("Device ID: <b>"+AndroidDataUtils.getDeviceUID(context)));
             tv_serviceToken.setText(Html.fromHtml("Service Token: <b>"+AndroidDataUtils.getServiceToken(context)));
-            tv_installationId.setText(Html.fromHtml("Installation ID: <b>"+AndroidDataUtils.getInstallationId(context)));
+            tv_installationId.setText(Html.fromHtml("Installation ID: <b>"+LenddoCoreUtils.getInstallationId(context)));
             tv_uploadMode.setText(Html.fromHtml("Upload Mode: <b>"+spn_connections.getSelectedItem().toString()));
             tv_hasUploadedInitial.setText(Html.fromHtml("Data Sending Callback:"));
             enableWidgets(false);
@@ -351,6 +355,7 @@ public class ScoringFragment extends Fragment implements View.OnClickListener {
         cb_enableBrowserHistory.setEnabled(isEnable);
         cb_enableLocation.setEnabled(isEnable);
         cb_enableBatteryCharge.setEnabled(isEnable);
+        cb_enableGalleryMetaData.setEnabled(isEnable);
         cb_enableSmsBody.setEnabled(isEnable);
         cb_enablePhoneNumberHashing.setEnabled(isEnable);
         cb_enableContactsNameHAshing.setEnabled(isEnable);

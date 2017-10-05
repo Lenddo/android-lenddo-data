@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">LenddoData</string>
     <string name="grant_access">Grant Access</string>
-    <string name="permission_intro">Please give us access permission to Phone, SMS, Contacts, Location, and Calendar in order to generate your credit score. Rest assured, your data is safe as we use industry standard for encrypting private data over the internet.\n</string>
+    <string name="permission_intro">Please give us access permission to Phone, SMS, Contacts, Photos/Media/Files, Location, and Calendar in order to generate your credit score. Rest assured, your data is safe as we use industry standard for encrypting private data over the internet.\n</string>
     <string name="learnmore_allcaps">LEARN MORE</string>
     <string name="back_allcaps">BACK</string>
     <string name="cancel_allcaps">CANCEL</string>
@@ -17,12 +17,14 @@
     <string name="permission_title_location">Location</string>
     <string name="permission_title_contacts">Contacts</string>
     <string name="permission_title_calendar">Calendar</string>
+    <string name="permission_title_media">Photos/Media/Files</string>
 
     <string name="permission_detail_sms">We use read access to SMS messages to determine a list of people you message most frequently. This helps us build a social graph by making use of the data you provided us.</string>
     <string name="permission_detail_phone">We use the phone state to obtain your Android device ID, which is sent to our servers and used for analytics and reporting purposes. We use read access to your call logs to determine a list of people you contact most frequently. This helps us build a social graph by making use of the data you provided us.</string>
     <string name="permission_detail_location">We study periodic locational activity. This helps us estimate with a fair level of accuracy on your most visited locations. We use this as a signal for building your credit score.</string>
     <string name="permission_detail_contacts">We use read access to contacts to determine a list of people in your contact list. This helps us build a social graph by making use of the data you provided us. We will not use this information to contact your friends.</string>
     <string name="permission_detail_calendar">Having access to calendar events helps us determine the time of the day you are most busy. People who are busy during the day have different credit behaviour than people who are busy during the night. We use this as a signal for building your credit score.</string>
+    <string name="permission_detail_media">We use read access to Photos/Media/Files to extract geo-location information from image and video files. This helps us estimate with a fair level of accuracy on your most visited locations. We use this as a signal for building your credit score.</string>
 
     <string name="feedback_title">Help Us Improve</string>
     <string name="feedback_inquiry">What is your primary reason for not sharing data?</string>
