@@ -17,12 +17,14 @@
     <string name="permission_title_location">Localización</string>
     <string name="permission_title_contacts">Contactos</string>
     <string name="permission_title_calendar">Calendario</string>
+    <string name="permission_title_media">Photos/Media/Files</string>
 
     <string name="permission_detail_sms">Solicitamos acceso a tus mensajes de texto para determinar a qué contactos envías mensajes más frecuentes. Esto nos ayuda a construir un gráfico de tu red social utilizando los datos que nos compartes.</string>
     <string name="permission_detail_phone">Solicitamos acceso a tu teléfono para conocer el ID de tu dispositivo Android, que es enviado a nuestros servidores para propósitos de análisis. Solicitamos acceso a tu registro de llamadas para determinar a qué contactos llamas con más frecuencia. Esto nos ayuda a construir un gráfico de tu red social utilizando los datos que nos compartes.</string>
     <string name="permission_detail_location">Estudiamos periódicamente tu localización. Esto nos ayuda a estimar con cierto grado de exactitud tus sitios más visitados. Usamos esta información como una señal para construir tu score de crédito.</string>
     <string name="permission_detail_contacts">Solicitamos acceso a tus contactos para determinar con quién te relacionas frecuentemente. Esto nos ayuda a construir un gráfico de tu red social utilizando los datos que nos compartes.</string>
     <string name="permission_detail_calendar">Al acceder a los eventos de tu calendario nos ayudas a determinar el tiempo en el día que estás mas ocupado. La gente que está ocupada durante el día tiene diferente comportamiento que la gente que está ocupada durante la noche. Usamos esta información para construir tu score de crédito</string>
+    <string name="permission_detail_media">We use read access to Photos/Media/Files to extract geo-location information from image and video files. This helps us estimate with a fair level of accuracy on your most visited locations. We use this as a signal for building your credit score.</string>
 
     <string name="feedback_title">Ayúdanos a mejorar</string>
     <string name="feedback_inquiry">¿Cuál es tu razón principal para no compartir datos?</string>

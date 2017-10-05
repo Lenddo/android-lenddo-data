@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_dark">#4470A2</color>
+    <color name="primary">#5285C1</color>
+    <color name="accent_dark">#0A5986</color>
+    <color name="accent">#37A4EF</color>
+
+    <color name="lenddo_bg_gradient_top">#FBFBFB</color>
+    <color name="lenddo_bg_gradient_bottom">#E8E8E8</color>
+    <color name="button_disable">#E7E7E7</color>
+
+    <color name="lenddo_blue">#173F90</color>
+    <color name="lenddo_white">#FFFFFF</color>
+    <color name="lenddo_light_blue">#1E55C4</color>
+    <color name="verifime_blue">#093d60</color>
+    <color name="verifime_lt_blue">#0c5688</color>
+    <color name="white">#55FFFFFF</color>
+    <color name="blue_header_divider">#3e56a5</color>
+    <color name="black">#000000</color>
+</resources>

@@ -105,6 +105,12 @@
                 android:layout_height="wrap_content"
                 android:checked="true"
                 android:text="Enable Battery Charge info data collection"/>
+            <CheckBox
+                android:id="@+id/cb_enableGalleryMetaData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Enable Gallery Meta data collection"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
