@@ -141,7 +141,7 @@
                     </LinearLayout>
                 </LinearLayout>
 
-                <!-- Location -->
+                <!-- Storage -->
                 <LinearLayout
                     android:id="@+id/grp_permission_media"
                     android:layout_width="match_parent"
