@@ -2,12 +2,12 @@
     <string name="app_name">LenddoData</string>
     <string name="grant_access">Memberikan akses</string>
     <string name="permission_intro">Tolong beri kami izin akses ke Telepon, SMS, Kontak, Lokasi, dan Kalender untuk memberi kredit anda. Kami mengambil perlindungan data dengan sangat serius.</string>
-    <string name="learnmore_allcaps">Belajarlah lagi</string>
+    <string name="learnmore_allcaps">BELAJARLAH LAGI</string>
     <string name="back_allcaps">KEMBALI</string>
-    <string name="cancel_allcaps">Batalkan</string>
-    <string name="done_allcaps">Sudah</string>
-    <string name="submit_allcaps">mengajukan</string>
-    <string name="continue_allcaps">TERUS</string>
+    <string name="cancel_allcaps">BATALKAN</string>
+    <string name="done_allcaps">SUDAH</string>
+    <string name="submit_allcaps">MENGAJUKAN</string>
+    <string name="continue_allcaps">LANJUTKAN</string>
 
     <string name="permission_rationale_partial">Untuk terus menggunakan aplikasi, Anda harus memberikan izin berikut:</string>
     <string name="permission_rationale_complete">Untuk memastikan bahwa Anda memahami apa yang sebenarnya kami kumpulkan, Kami berikan rincian sebagai berikut:</string>
