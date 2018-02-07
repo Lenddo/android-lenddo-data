@@ -1,6 +1,9 @@
 Lenddo Data SDK ver 2.22.1
 =======================
 
+*Note:* This sdk is deprecated, please use the new Lenddo SDK from https://github.com/Lenddo/android-lenddo .
+For existing users, you might need to follow th migration guide.
+
 ## Table of Contents
 
 1.  [Introduction](#user-content-introduction)
